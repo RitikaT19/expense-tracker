@@ -32,7 +32,7 @@ class MyHomePage extends StatelessWidget {
             Container(
               margin: EdgeInsets.symmetric(
                 vertical: 10,
-                horizontal: 15,
+                horizontal: 2,
               ),
               width: double.infinity,
               child: Card(
@@ -59,7 +59,7 @@ class MyHomePage extends StatelessWidget {
                         ),
                         padding: EdgeInsets.all(10),
                         child: Text(
-                          tx.amount.toString(),
+                          '₹${tx.amount}',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
