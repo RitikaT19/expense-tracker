@@ -16,10 +16,23 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final List<Transaction> transactions = [
-    Transaction(id: 't1', title: 'Books', amount: 400.00, date: DateTime.now()),
     Transaction(
-        id: 't2', title: 'Groceries', amount: 300.00, date: DateTime.now())
+      id: 't1',
+      title: 'Books',
+      amount: 400.00,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't2',
+      title: 'Groceries',
+      amount: 300.00,
+      date: DateTime.now(),
+    )
   ];
+
+  late String titleInput;
+  late String amountInput;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,14 +64,25 @@ class MyHomePage extends StatelessWidget {
                   children: <Widget>[
                     TextField(
                       decoration: InputDecoration(labelText: 'Title'),
+                      onChanged: (val) {
+                        // ignore: unused_label
+                        titleInput = val;
+                      },
                     ),
                     TextField(
                       decoration: InputDecoration(labelText: 'Amount'),
+                      onChanged: (val) {
+                        // ignore: unused_label
+                        amountInput = val;
+                      },
                     ),
                     TextButton(
                       style: TextButton.styleFrom(primary: Colors.purple),
                       child: Text('Add transaction'),
-                      onPressed: () {},
+                      onPressed: () {
+                        print(titleInput);
+                        print(amountInput);
+                      },
                     )
                   ],
                 ),
